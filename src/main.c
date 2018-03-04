@@ -294,27 +294,27 @@ const ux_menu_entry_t menu_settings_browser[] = {
 
 const ux_menu_entry_t menu_settings[] = {
     {NULL, menu_settings_browser_init, 0, NULL, "Browser support", NULL, 0, 0},
-    {menu_main, NULL, 1, &C_nanos_icon_back, "Back", NULL, 61, 40},
+    {menu_main, NULL, 1, NULL, "Back", NULL, 61, 40},
     UX_MENU_END};
 #endif // HAVE_U2F
 
 const ux_menu_entry_t menu_about[] = {
     {NULL, NULL, 0, NULL, "Version", APPVERSION, 0, 0},
 #ifdef HAVE_U2F
-    {menu_main, NULL, 2, &C_nanos_icon_back, "Back", NULL, 61, 40},
+    {menu_main, NULL, 2, NULL, "Back", NULL, 61, 40},
 #else
-    {menu_main, NULL, 1, &C_nanos_icon_back, "Back", NULL, 61, 40},
+    {menu_main, NULL, 1, NULL, "Back", NULL, 61, 40},
 #endif // HAVE_U2F
     UX_MENU_END};
 
 const ux_menu_entry_t menu_main[] = {
-    {NULL, NULL, 0, &NAME3(C_nanos_badge_, COINID, ), "Use wallet to",
+    {NULL, NULL, 0, NULL, "Use wallet to",
      "view accounts", 33, 12},
 #ifdef HAVE_U2F
     {menu_settings, NULL, 0, NULL, "Settings", NULL, 0, 0},
 #endif // HAVE_U2F
     {menu_about, NULL, 0, NULL, "About", NULL, 0, 0},
-    {NULL, os_sched_exit, 0, &C_nanos_icon_dashboard, "Quit app", NULL, 50, 29},
+    {NULL, os_sched_exit, 0, NULL, "Quit app", NULL, 50, 29},
     UX_MENU_END};
 
 #endif // #if defined(TARGET_NANOS)
